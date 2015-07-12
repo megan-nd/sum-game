@@ -8,18 +8,21 @@ def sum_game():
         print('%s + %s = ??' % (num1,num2))
         print('What\'s the sum?')
         ans = input()
-        i = int(ans)
-        if i == num1+num2:
-            print('Yay! You\'re smaht!')
-            break
-        elif i != num1+num2:
-            print('Nope! Go back to school!')
+        if ans.strip() == "":
+            print('C\'mon.. you can do this!')
+        else:
+            i = int(ans)
+            if i == num1+num2:
+                print('Yay! You\'re smaht!')
+                break
+            elif i != num1+num2:
+                print('Nope! Go back to school!')
 
 def again():
-    print('Press enter to play again')
-    input()
-    sum_game()
-    again()
+    while True:
+        print('Press enter to play again')
+        input()
+        sum_game()
 
 sum_game()
 again()
